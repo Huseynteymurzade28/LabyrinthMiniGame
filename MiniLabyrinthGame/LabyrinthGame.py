@@ -82,7 +82,9 @@ def movement(x, y):
     Player_y = new_y
     Labyrinth[Player_x][Player_y] = "A"
 
-Commands = {"w": (-1, 0), "s": (1, 0), "a": (0, -1), "d": (0, 1)}
+Commands = {"w": (-1, 0), "s": (1, 0), "a": (0, -1), "d": (0, 1),
+            "j": (1, 0), "k": (-1, 0), "l": (0, 1), "h": (0, -1)}
+
 while True:
     screen.fill((255, 255, 255))
     draw_labyrinth()
@@ -101,6 +103,13 @@ while True:
                 movement(*Commands["a"])
             elif event.key == pygame.K_d:
                 movement(*Commands["d"])
-
+            elif event.key == pygame.K_k:
+                movement(*Commands["k"])
+            elif event.key == pygame.K_j:
+                movement(*Commands["j"])
+            elif event.key == pygame.K_h:
+                movement(*Commands["h"])
+            elif event.key == pygame.K_l:
+                movement(*Commands["l"])
     pygame.display.update()
     pygame.time.Clock().tick(144)
